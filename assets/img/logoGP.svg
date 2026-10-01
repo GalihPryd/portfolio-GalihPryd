@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <!-- Background Kotak Melengkung dengan warna hsl(228, 15%, 20%) -->
+  <rect width="512" height="512" rx="112" fill="hsl(228, 15%, 20%)"/>
+  
+  <!-- Inisial GP dengan warna teks Putih & Font Tebal Modern -->
+  <text x="50%" y="54%" 
+        font-family="Poppins, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" 
+        font-size="240" 
+        font-weight="700" 
+        fill="#FFFFFF" 
+        text-anchor="middle" 
+        dominant-baseline="central" 
+        letter-spacing="-8">GP</text>
+</svg>

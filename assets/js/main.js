@@ -29,8 +29,44 @@ const header = document.getElementById("header");
       this.scrollY >= 50 ? header.classList.add('blur-header') : header.classList.remove('blur-header')
 }
 window.addEventListener("scroll", blurHeader);
-/*=============== EMAIL JS ===============*/
 
+/*=============== EMAIL JS ===============*/
+const contactForm = document.getElementById("contact-form"),
+  contactMessage = document.getElementById("contact-message");
+
+  const sendEmail = (e) => {
+    e.preventDefault()
+
+    // serviceID - templateID - #form - public key
+    emailjs
+      .sendForm(
+        "service_yafnpdu",
+        "template_ma4n09w",
+        "#contact-form",
+        "O9z3V0zus5uglP7-U"
+      )
+      .then(
+        () => {
+          // Show sent message
+          contactMessage.textContent = "Message sent successfully";
+
+          // Remove message after five seconds
+          setTimeout(() => {
+            contactMessage.textContent = ''
+          }, 5000)
+
+          // Clear input fields
+          contactForm.reset()
+        },
+        () => {
+          // Show error message
+          contactMessage.textContent = "Message not sent (service error)";
+        },
+      );
+    
+  }
+
+  contactForm.addEventListener('submit', sendEmail)
 /*=============== SHOW SCROLL UP ===============*/
 
 /*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
